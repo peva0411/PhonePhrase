@@ -170,10 +170,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Angular\main.js" />
+    <Content Include="Angular\views\results.html" />
     <Content Include="Angular\views\round.html" />
     <Content Include="Angular\views\start.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Sounds\Buzzer.mp3" />
+    <Content Include="Content\Sounds\TicTock.mp3" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
