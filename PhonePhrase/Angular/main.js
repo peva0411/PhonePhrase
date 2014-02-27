@@ -52,6 +52,9 @@ app.factory('game', ['$timeout', '$rootScope', 'audio', function($timeout, $root
             },
             getNextWord: function() {
                 game.currentWord = game.words.pop();
+            },
+            playBuzzer: function() {
+                audio.buzzer.play();
             }
         };
 
@@ -83,7 +86,8 @@ app.controller('RoundController', [
 
 app.controller('ResultsController', [
     '$scope', '$location', 'game', function($scope,$location, game) {
-        $scope.redWon = function() {
+        $scope.redWon = function () {
+            game.playBuzzer();
             game.redTeamScore++;
             $location.path('/');
         };
