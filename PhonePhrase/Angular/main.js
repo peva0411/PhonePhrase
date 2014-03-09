@@ -44,10 +44,14 @@ app.factory('game', ['$timeout', '$rootScope', 'audio', function($timeout, $root
             words: ["cat", "dog", "mouse", "Elephant", "Cow", "Duck", "Horse", "Bird"],
             startRound: function () {
                     game.roundOver = false;
+                    game.audio.buzzer.muted = true;
+                    game.audio.buzzer.play();
                     game.audio.timer.play();
-                    $timeout(function() {
+                    $timeout(function () {
+                        game.audio.buzzer.muted = false;
                         game.roundOver = true;
                         game.audio.timer.pause();
+                        game.audio.buzzer.play();
                     }, 5000);
             },
             getNextWord: function() {
@@ -77,7 +81,6 @@ app.controller('RoundController', [
 
         $scope.$watch('game.roundOver', function(value) {
             if (value) {
-                game.audio.buzzer.play();
                 $location.path('/results');
             }
         });
@@ -87,7 +90,6 @@ app.controller('RoundController', [
 app.controller('ResultsController', [
     '$scope', '$location', 'game', function($scope,$location, game) {
         $scope.redWon = function () {
-            game.playBuzzer();
             game.redTeamScore++;
             $location.path('/');
         };
