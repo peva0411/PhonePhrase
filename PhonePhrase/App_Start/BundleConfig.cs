@@ -26,7 +26,10 @@ namespace PhonePhrase
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/angular.js",
                 "~/Scripts/angular-route.js",
-                "~/Angular/main.js"));
+                "~/Angular/main.js",
+                "~/Angular/Controllers/*.js",
+                "~/Angular/Services/*.js",
+                "~/Angular/Directives/*.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

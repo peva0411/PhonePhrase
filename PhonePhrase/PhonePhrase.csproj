@@ -169,10 +169,17 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Angular\Controllers\ResultsController.js" />
+    <Content Include="Angular\Controllers\RoundController.js" />
+    <Content Include="Angular\Controllers\StartController.js" />
     <Content Include="Angular\main.js" />
-    <Content Include="Angular\views\results.html" />
-    <Content Include="Angular\views\round.html" />
-    <Content Include="Angular\views\start.html" />
+    <Content Include="Angular\Services\AudioService.js" />
+    <Content Include="Angular\Services\GameService.js" />
+    <Content Include="Angular\Services\RoundService.js" />
+    <Content Include="Angular\Services\WordsService.js" />
+    <Content Include="Angular\Views\results.html" />
+    <Content Include="Angular\Views\round.html" />
+    <Content Include="Angular\Views\start.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Sounds\Buzzer.mp3" />
@@ -496,6 +503,7 @@
     <Content Include="Scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Angular\Directives\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

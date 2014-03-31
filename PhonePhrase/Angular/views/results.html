@@ -1,13 +1,19 @@
 ﻿<div class="row">
-    Round Over! Who won?
+    Round {{game.roundCount}} is Over! <br/> Who won?
 </div>
-<div class="row">
-    <div class="col-sm-12">
-        <button class="btn btn-lg btn-primary" ng-click="blueWon()">Blue Team</button>
+<div class="row" ng-hide="roundScored">
+    <div class="col-sm-6">
+        <button class="btn btn-lg btn-primary" ng-click="addScore('blue')">Blue Team</button>
+    </div>
+    <div class="col-sm-6">
+        <button class="btn btn-lg btn-danger" ng-click="addScore('red')">Red Team</button>
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-12">
-        <button class="btn btn-lg btn-danger" ng-click="redWon()">Red Team</button>
-    </div>
+    <div>Red Team Score: {{game.redTeamScore}}</div>
+    <div>Blue Team Score: {{game.blueTeamScore}}</div>
+</div>
+
+<div class="row" ng-show="isNextRound()">
+    <button class="btn btn-lg btn-primary" ng-click="startNextRound()">Start Next Round</button>
 </div>
