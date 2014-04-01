@@ -23,13 +23,13 @@ namespace PhonePhrase
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+            bundles.Add(new ScriptBundle("~/bundles/ng").Include(
                 "~/Scripts/angular*",
                 "~/Scripts/angular-route*",
-                "~/Angular/main.js"));
-                //.IncludeDirectory("~/Angular/Controllers", "*.js")
-                //.IncludeDirectory("~/Angular/Services", "*.js")
-                //.IncludeDirectory("~/Angular/Directives", "*.js"));
+                "~/Angular/main.js")
+                .IncludeDirectory("~/Angular/Controllers", "*.js")
+                .IncludeDirectory("~/Angular/Services", "*.js")
+                .IncludeDirectory("~/Angular/Directives", "*.js"));
 
             bundles.Add(new StyleBundle("~/Styles/css").Include(
                       "~/Content/bootstrap.css",
