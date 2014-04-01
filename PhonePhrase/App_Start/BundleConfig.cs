@@ -24,8 +24,8 @@ namespace PhonePhrase
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                "~/Scripts/angular.js",
-                "~/Scripts/angular-route.js",
+                "~/Scripts/angular*",
+                "~/Scripts/angular-route*",
                 "~/Angular/main.js")
                 .IncludeDirectory("~/Angular/Controllers", "*.js")
                 .IncludeDirectory("~/Angular/Services", "*.js")
