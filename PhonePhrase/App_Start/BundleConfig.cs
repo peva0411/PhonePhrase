@@ -26,12 +26,12 @@ namespace PhonePhrase
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/angular*",
                 "~/Scripts/angular-route*",
-                "~/Angular/main.js")
-                .IncludeDirectory("~/Angular/Controllers", "*.js")
-                .IncludeDirectory("~/Angular/Services", "*.js")
-                .IncludeDirectory("~/Angular/Directives", "*.js"));
+                "~/Angular/main.js"));
+                //.IncludeDirectory("~/Angular/Controllers", "*.js")
+                //.IncludeDirectory("~/Angular/Services", "*.js")
+                //.IncludeDirectory("~/Angular/Directives", "*.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Styles/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
         }
