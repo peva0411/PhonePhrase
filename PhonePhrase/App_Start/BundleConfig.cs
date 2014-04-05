@@ -8,6 +8,8 @@ namespace PhonePhrase
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            BundleTable.EnableOptimizations = true;
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -27,13 +29,8 @@ namespace PhonePhrase
                 "~/Scripts/angular.js",
                 "~/Scripts/angular-route.js",
                 "~/Angular/main.js",
-                "~/Angular/Controllers/ResultsController.js",
-                "~/Angular/Controllers/RoundController.js",
-                "~/Angular/Controllers/StartController.js",
-                "~/Angular/Services/AudioService.js",
-                "~/Angular/Services/GameService.js",
-                "~/Angular/Services/RoundService.js",
-                "~/Angular/Services/WordsService.js"));
+                "~/Angular/Controllers/*.js",
+                "~/Angular/Services/*.js"));
 
             bundles.Add(new StyleBundle("~/Styles/css").Include(
                       "~/Content/bootstrap.css",
