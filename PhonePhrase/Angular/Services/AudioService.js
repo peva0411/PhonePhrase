@@ -3,7 +3,7 @@
 
         var timerAudio = $document[0].createElement('audio');
         timerAudio.src = '/Content/Sounds/TicTock.mp3';
-        timerAudio.playbackRate = 1;
+        timerAudio.playbackRate = 0.5;
         timerAudio.loop = true;
 
         var buzzerAudio = $document[0].createElement('audio');

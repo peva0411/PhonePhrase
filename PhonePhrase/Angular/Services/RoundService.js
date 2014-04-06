@@ -1,9 +1,9 @@
 ﻿angular.module('phraseApp')
-        .factory('round', ['$timeout', 'words', 'audio', function ($timeout, words, audio) {
+        .factory('round', ['$interval', 'words', 'audio', 'vibrate', function ($interval, words, audio, vibrate) {
 
             var getRoundTime = function () {
-                var min = 3000;
-                var max = 6000;
+                var min = 30000;
+                var max = 60000;
                 return Math.floor(Math.random() * (max - min + 1) + min);
             };
     return {
@@ -12,34 +12,36 @@
         getNextWord: function () {
            this.currentWord = words.wordSets[0].words.pop();
         },
-        startRound: function() {
+        startRound: function () {
+            vibrate.vibrate();
             var self = this;
             var timer;
             var i = 0;
             var interval = Math.floor(getRoundTime() / 3);
-            console.log('started ' + interval);
+            console.log('started, interval time: ' + interval/1000);
             this.roundOver = false;
             audio.timer.play();
 
-            $timeout(function () {
-                console.log("stopped");
-                self.roundOver = true;
-                audio.timer.pause();
-                audio.buzzer.play();
-            }, interval);
-
-            //timer = $interval(function () {
-            //    if (i === 0) {
-            //        audio.timer.playbackRate = 1;
-            //    }else if (i === 1) {
-            //        audio.timer.playbackRate = 2;
-            //    }else if (i === 2) {
-            //        audio.timer.pause();
-            //        audio.timer.playbackRate = 0.25;
-            //        i = 0;
-            //    }
-            //    i++;
-            //}, interval);
+            function setTimerRate() {
+                console.log("interval n: " + i);
+                if (i === 0) {
+                    vibrate.vibrate();
+                    audio.timer.playbackRate = 1;
+                    i++;
+                } else if (i === 1) {
+                    vibrate.vibrate();
+                    audio.timer.playbackRate = 2;
+                    i++;
+                } else if (i === 2) {
+                    audio.timer.pause();
+                    audio.buzzer.play();
+                    self.roundOver = true;
+                    audio.timer.playbackRate = 0.5;
+                    i = 0;
+                    $interval.cancel(timer);
+                }
+            }
+            timer = $interval(setTimerRate, interval, 3);
         }
     };
 }]);
