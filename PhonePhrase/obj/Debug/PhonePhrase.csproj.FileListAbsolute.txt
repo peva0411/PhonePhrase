@@ -50,6 +50,5 @@ c:\users\phil\documents\visual studio 2013\Projects\PhonePhrase\PhonePhrase\bin\
 c:\users\phil\documents\visual studio 2013\Projects\PhonePhrase\PhonePhrase\bin\Microsoft.Owin.Security.Google.xml
 c:\users\phil\documents\visual studio 2013\Projects\PhonePhrase\PhonePhrase\bin\Microsoft.Owin.Security.Twitter.xml
 c:\users\phil\documents\visual studio 2013\Projects\PhonePhrase\PhonePhrase\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-c:\users\phil\documents\visual studio 2013\Projects\PhonePhrase\PhonePhrase\obj\Debug\PhonePhrase.csprojResolveAssemblyReference.cache
 c:\users\phil\documents\visual studio 2013\Projects\PhonePhrase\PhonePhrase\obj\Debug\PhonePhrase.dll
 c:\users\phil\documents\visual studio 2013\Projects\PhonePhrase\PhonePhrase\obj\Debug\PhonePhrase.pdb

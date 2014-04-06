@@ -176,6 +176,7 @@
     <Content Include="Angular\Services\AudioService.js" />
     <Content Include="Angular\Services\GameService.js" />
     <Content Include="Angular\Services\RoundService.js" />
+    <Content Include="Angular\Services\VibrateService.js" />
     <Content Include="Angular\Services\WordsService.js" />
     <Content Include="Angular\Views\results.html" />
     <Content Include="Angular\Views\round.html" />
