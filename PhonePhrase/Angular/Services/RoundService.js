@@ -1,5 +1,5 @@
 ﻿angular.module('phraseApp')
-        .factory('round', ['$interval', 'words', 'audio', function ($interval, words, audio) {
+        .factory('round', ['$interval', 'words', 'audio', 'vibrate', function ($interval, words, audio,vibrate) {
 
             var getRoundTime = function () {
                 var min = 30000;
@@ -13,7 +13,7 @@
            this.currentWord = words.wordSets[0].words.pop();
         },
         startRound: function () {
-           // vibrate.vibrate();
+            vibrate.vibrate();
             var self = this;
             var timer;
             var i = 0;
@@ -25,11 +25,11 @@
             function setTimerRate() {
                 console.log("interval n: " + i);
                 if (i === 0) {
-                 //   vibrate.vibrate();
+                    vibrate.vibrate();
                     audio.timer.playbackRate = 1;
                     i++;
                 } else if (i === 1) {
-                 //   vibrate.vibrate();
+                    vibrate.vibrate();
                     audio.timer.playbackRate = 2;
                     i++;
                 } else if (i === 2) {
